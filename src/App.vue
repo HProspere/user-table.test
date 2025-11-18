@@ -47,7 +47,7 @@ nav {
 }
 
 main {
-  flex: 1 1 auto;
+  flex: 1 1 0;
   overflow: auto;
 }
 </style>
