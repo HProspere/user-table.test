@@ -17,11 +17,11 @@ export const userRolesList: ValueWithTitle<UserRole>[] = [
 
 export const userStatusesList: ValueWithTitle<UserStatus>[] = [
   {
-    title: 'Активный',
+    title: 'Активные',
     value: 'active',
   },
   {
-    title: 'Неактивный',
+    title: 'Неактивные',
     value: 'inactive',
   },
 ];

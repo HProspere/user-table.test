@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { UserRole } from '@/types/user.ts';
+import type { UserRole, ValueWithTitle } from '@/types/user.ts';
 import type { UserTableCompHeaderProps, UserTableCompHeaderEmits } from './UserTableCompHeader.interface.ts';
 import { userRolesList } from '@/constants/user.ts';
 
@@ -14,6 +14,14 @@ const {
 } = defineProps<UserTableCompHeaderProps>()
 
 const emit = defineEmits<UserTableCompHeaderEmits>();
+
+const userRoles: ValueWithTitle<UserRole>[] = [
+  {
+    title: 'Все роли',
+    value: '',
+  },
+  ...userRolesList,
+]
 
 const handleSearchInput = (event: Event) => {
   const value = (event.target as HTMLInputElement).value;
@@ -47,9 +55,8 @@ const handleRoleChange = (event: Event) => {
         class="role-filter"
         @change="handleRoleChange"
       >
-        <option value="">Все роли</option>
         <option
-          v-for="role in userRolesList"
+          v-for="role in userRoles"
           :value="role.value"
         >
           {{ role.title }}

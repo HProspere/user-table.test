@@ -2,7 +2,7 @@ export type UserRole = 'admin' | 'user' | 'moderator';
 
 export type ValueWithTitle<T> = {
   title: string;
-  value: T;
+  value: T | '';
 }
 
 export type UserStatus = 'active' | 'inactive';
