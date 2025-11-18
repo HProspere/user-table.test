@@ -1,8 +1,8 @@
-import { defineComponent } from "vue";
-import { createRouter, createWebHistory, type RouteRecordRaw } from "vue-router";
+import { defineComponent } from 'vue';
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
 // @ts-ignore
-import UserTable from "../components/UserTable.vue";
-import UserTableComp from "../components/UserTableComp/UserTableComp.vue";
+import UserTable from '@/components/UserTable/UserTable.vue';
+import UserTableComp from '@/components/UserTableComp/UserTableComp.vue';
 
 export const routes: RouteRecordRaw[] = [
   {
