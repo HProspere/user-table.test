@@ -1,14 +1,23 @@
 import type { UserRole, UserStatus } from '@/types/user.ts';
 import { userRolesList, userStatusesList } from '@/constants/user.ts';
+import type { BadgeStyle } from "@/components/Badge/Badge.interface.ts";
 
 export function useUserFormatting() {
   const getRoleLabel = (role: UserRole): string => {
     return userRolesList.find(el => el.value === role)?.title ?? role;
   };
 
+  const getRoleBadgeColor = (role: UserRole): BadgeStyle => {
+    return userRolesList.find(el => el.value === role)?.badgeStyle ?? 'neutral';
+  }
+
   const getStatusLabel = (status: UserStatus): string => {
-    return userStatusesList.find(el => el.value === status)?.title ?? status;
+    return userStatusesList.find(el => el.value === status)?.label ?? status;
   };
+
+  const getStatusBadgeColor = (status: UserStatus): BadgeStyle => {
+    return userStatusesList.find(el => el.value === status)?.badgeStyle ?? 'neutral';
+  }
 
   const formatDate = (dateString: string): string => {
     const date = new Date(dateString);
@@ -66,7 +75,9 @@ export function useUserFormatting() {
 
   return {
     getRoleLabel,
+    getRoleBadgeColor,
     getStatusLabel,
+    getStatusBadgeColor,
     formatDate,
     formatRelativeTime,
     getActivityClass,

@@ -28,7 +28,7 @@ export function useUserModals(users: Ref<UserRecord[]>) {
     } else if (value.length < 3) {
       newUserErrors.value.name = 'Имя должно содержать минимум 3 символа';
     } else {
-      newUserErrors.value.name = "";
+      newUserErrors.value.name = '';
     }
   };
 

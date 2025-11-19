@@ -1,8 +1,12 @@
+import type { BadgeStyle } from '@/components/Badge/Badge.interface.ts';
+
 export type UserRole = 'admin' | 'user' | 'moderator';
 
 export type ValueWithTitle<T> = {
   title: string;
   value: T | '';
+  label?: string
+  badgeStyle?: BadgeStyle;
 }
 
 export type UserStatus = 'active' | 'inactive';

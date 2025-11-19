@@ -5,13 +5,13 @@ interface UserTableCompFiltersProps {
    * Фильтр по статусу пользователя
    * @default ''
    */
-  filterStatus: UserStatus | ''
+  filterStatus: UserStatus | '';
   /**
    * Фильтры по дате регистрации
    * default ''
    */
-  dateFrom: string
-  dateTo: string
+  dateFrom: string;
+  dateTo: string;
 }
 
 interface UserTableCompFiltersEmits {

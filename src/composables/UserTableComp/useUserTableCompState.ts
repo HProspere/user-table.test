@@ -15,7 +15,7 @@ export function useUserTableCompState({
     users,
     initialPageSize,
   }: UseUserTableStateArgs) {
-  const searchQuery = ref('');
+  const searchString = ref('');
   const filterRole = ref<UserRole | ''>('');
   const filterStatus = ref<UserStatus | ''>('');
   const dateFrom = ref('');
@@ -74,11 +74,11 @@ export function useUserTableCompState({
   });
 
   const filteredAndSearchedUsers = computed(() => {
-    if (!searchQuery.value.trim()) {
+    if (!searchString.value.trim()) {
       return filteredByDate.value;
     }
 
-    const query = searchQuery.value.toLowerCase().trim();
+    const query = searchString.value.toLowerCase().trim();
     return filteredByDate.value.filter((user) => {
       return (
         user.name.toLowerCase().includes(query) ||
@@ -259,14 +259,14 @@ export function useUserTableCompState({
   };
 
   const clearAllFilters = () => {
-    searchQuery.value = '';
+    searchString.value = '';
     filterRole.value = '';
     filterStatus.value = '';
     clearDateFilter();
   };
 
   watch(
-    [searchQuery, filterRole, filterStatus, dateFrom, dateTo],
+    [searchString, filterRole, filterStatus, dateFrom, dateTo],
     () => {
       currentPage.value = 1;
     }
@@ -277,7 +277,7 @@ export function useUserTableCompState({
   });
 
   return {
-    searchQuery,
+    searchString,
     filterRole,
     filterStatus,
     dateFrom,

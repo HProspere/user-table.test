@@ -148,48 +148,6 @@ const handleRoleChange = (event: Event) => {
       cursor: pointer;
       font-size: $font-size-base;
     }
-
-    .btn {
-      padding: $spacing-base $spacing-xxl;
-      border: none;
-      border-radius: $border-radius-base;
-      cursor: pointer;
-      font-weight: 500;
-      transition: all 0.3s;
-      font-size: $font-size-base;
-
-      &:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
-
-      &-primary {
-        background: #4caf50;
-        color: white;
-
-        &:hover:not(:disabled) {
-          background: #45a049;
-        }
-      }
-
-      &-secondary {
-        background: #2196f3;
-        color: white;
-
-        &:hover:not(:disabled) {
-          background: #0b7dda;
-        }
-      }
-
-      &-danger {
-        background: #f44336;
-        color: white;
-
-        &:hover:not(:disabled) {
-          background: #da190b;
-        }
-      }
-    }
   }
 }
 </style>

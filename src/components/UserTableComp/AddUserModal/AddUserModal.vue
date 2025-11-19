@@ -231,31 +231,6 @@ const handleInput =
     display: flex;
     justify-content: flex-end;
     gap: $spacing-10;
-
-    .btn {
-      padding: $spacing-base $spacing-xxl;
-      border: none;
-      border-radius: $border-radius-base;
-      cursor: pointer;
-      font-size: $font-size-base;
-      font-weight: 500;
-      transition: all 0.3s;
-
-      &-primary {
-        background: #4caf50;
-        color: white;
-
-        &:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-        }
-      }
-
-      &-secondary {
-        background: #2196f3;
-        color: white;
-      }
-    }
   }
 }
 

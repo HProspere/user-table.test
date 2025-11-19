@@ -51,3 +51,7 @@ main {
   overflow: auto;
 }
 </style>
+
+<style lang="scss">
+@import '@/styles/common';
+</style>

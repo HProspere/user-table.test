@@ -1,3 +1,5 @@
+import type { EditableUserFields } from '@/types/user.ts';
+
 type SortColumn =
   | 'id'
   | 'name'
@@ -7,4 +9,9 @@ type SortColumn =
 
 type SortDirection = 'asc' | 'desc';
 
-export type { SortColumn, SortDirection };
+type EditFieldPayload = {
+  field: keyof EditableUserFields;
+  value: EditableUserFields[keyof EditableUserFields];
+};
+
+export type { SortColumn, SortDirection, EditFieldPayload };
